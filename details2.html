@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animated Gridview</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: 'Open Sans', sans-serif;
+			height: 100%;
+			overflow-x: hidden;
+			background-color: #eee;
+		}
+		
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 50px 0;
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+			grid-gap: 20px;
+		}
+		
+		.image {
+			position: relative;
+			overflow: hidden;
+			border-radius: 5px;
+			box-shadow: 1px 1px 10px rgba(0,0,0,0.2);
+			transition: all 0.3s ease;
+		}
+		
+		.image:hover {
+			transform: scale(1.05);
+			box-shadow: 1px 1px 20px rgba(0,0,0,0.4);
+		}
+		
+		.image img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: all 0.3s ease;
+		}
+		
+		.image:hover img {
+			transform: scale(1.2);
+		}
+		
+		.image::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,0.5);
+			opacity: 0;
+			transition: all 0.3s ease;
+		}
+		
+		.image:hover::after {
+			opacity: 1;
+		}
+		
+		.image:hover h2 {
+			transform: translateY(-50px);
+			opacity: 1;
+		}
+		
+		.image h2 {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			padding: 10px;
+			background-color: rgba(0,0,0,0.8);
+			color: #fff;
+			font-size: 1.5em;
+			text-align: center;
+			transform: translateY(0);
+			opacity: 0;
+			transition: all 0.3s ease;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+        <div class="image">
+			<img src="./images/rkare/login.png" alt="Auth">
+			<h2>Authentication View</h2>
+		</div>
+        <div class="image">
+			<img src="./images/rkare/auth.png" alt="Login">
+			<h2>Login Section</h2>
+		</div>
+        <div class="image">
+			<img src="./images/rkare/otp.png" alt="OTP verification">
+			<h2>OTP verification Section</h2>
+		</div>
+		<div class="image">
+			<img src="./images/rkare/homepage.png" alt="Home">
+			<h2>Home Page</h2>
+		</div>
+        <div class="image">
+			<img src="./images/rkare/appointment_detail.png" alt="Appointment">
+			<h2>Appointment Detail Section</h2>
+		</div>
+		<div class="image">
+			<img src="./images/rkare/calendar.png" alt="Demo Image 2">
+			<h2>Calendar Section</h2>
+		</div>
+		<div class="image">
+			<img src="./images/rkare/survey list.png" alt="Demo Image 3">
+			<h2>Surveys Section</h2>
+		</div>
+		<div class="image">
+			<img src="./images/rkare/survey_detail.png" alt="Demo Image 4">
+			<h2>Survey Detail Section</h2>
+		</div>
+		<div class="image">
+			<img src="./images/rkare/profile.png" alt="Demo Image 5">
+			<h2>Profile Section</h2>
+		</div>
+		
+	</div>

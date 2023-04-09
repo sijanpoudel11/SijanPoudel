@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animated Gridview</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: 'Open Sans', sans-serif;
+			height: 100%;
+			overflow-x: hidden;
+			background-color: #eee;
+		}
+		
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 50px 0;
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+			grid-gap: 20px;
+		}
+		
+		.image {
+			position: relative;
+			overflow: hidden;
+			border-radius: 5px;
+			box-shadow: 1px 1px 10px rgba(0,0,0,0.2);
+			transition: all 0.3s ease;
+		}
+		
+		.image:hover {
+			transform: scale(1.05);
+			box-shadow: 1px 1px 20px rgba(0,0,0,0.4);
+		}
+		
+		.image img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: all 0.3s ease;
+		}
+		
+		.image:hover img {
+			transform: scale(1.2);
+		}
+		
+		.image::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,0.5);
+			opacity: 0;
+			transition: all 0.3s ease;
+		}
+		
+		.image:hover::after {
+			opacity: 1;
+		}
+		
+		.image:hover h2 {
+			transform: translateY(-50px);
+			opacity: 1;
+		}
+		
+		.image h2 {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			padding: 10px;
+			background-color: rgba(0,0,0,0.8);
+			color: #fff;
+			font-size: 1.5em;
+			text-align: center;
+			transform: translateY(0);
+			opacity: 0;
+			transition: all 0.3s ease;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="image">
+			<img src="./images/bicocca/login.jpg" alt="login section">
+			<h2>login section</h2>
+		</div>
+		<div class="image">
+			<img src="./images/bicocca/extra.jpg" alt="login section">
+			<h2>login section</h2>
+		</div>
+		<div class="image">
+			<img src="./images/bicocca/calender.jpg" alt="calendar section">
+			<h2>calendar section</h2>
+		</div>
+		<div class="image">
+			<img src="./images/bicocca/career.jpg" alt="career section">
+			<h2>career section</h2>
+		</div>
+		<div class="image">
+			<img src="./images/bicocca/exams.jpg" alt="exams section">
+		
+			<h2>exams section</h2>
+		</div>
+		<div class="image">
+			<img src="./images/bicocca/menu.jpg" alt="menu section">
+			<h2>menu section</h2>
+		</div>
+	</div>
