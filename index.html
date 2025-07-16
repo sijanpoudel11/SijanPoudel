@@ -1,9 +1,5 @@
 <!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html>
 	<head>
 		<title>SIJAN POUDEL</title>
@@ -209,25 +205,26 @@
 							<p>We can get in touch through the form below or by reaching out to my email address</p>
 							<div class="split style1">
 								<section>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
-											</div>
-											<div class="field half">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
-											</div>
-											<div class="field">
-												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="5"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
-										</ul>
-									</form>
+								<form id="contact-form">
+								<div class="fields">
+									<div class="field half">
+									<label for="name">Name</label>
+									<input type="text" name="name" id="name" required />
+									</div>
+									<div class="field half">
+									<label for="email">Email</label>
+									<input type="email" name="email" id="email" required />
+									</div>
+									<div class="field">
+									<label for="message">Message</label>
+									<textarea name="message" id="message" rows="5" required></textarea>
+									</div>
+								</div>
+								<button class="button submit" type="submit">Send Message</button>
+								</form>
+
+								<div id="form-response" style="margin-top:1em;"></div>
+
 								</section>
 								<section>
 									<ul class="contact">
@@ -279,6 +276,40 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<script>
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xrbkyanj"; // Replace with your Formspree endpoint
+
+  $('form').on('click', '.submit', function (event) {
+    event.preventDefault();
+    const form = $(this).closest('form')[0];
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const formData = {
+      name: $('#name').val(),
+      email: $('#email').val(),
+      message: $('#message').val()
+    };
+
+    $.ajax({
+      url: FORMSPREE_ENDPOINT,
+      method: "POST",
+      data: formData,
+      dataType: "json",
+      success: function () {
+        $('#form-response').html("<p style='color: green;'>Thanks! Your message was sent.</p>");
+        form.reset();
+      },
+      error: function () {
+        $('#form-response').html("<p style='color: red;'>Oops! Something went wrong.</p>");
+      }
+    });
+  });
+</script>
 
 	</body>
 </html>

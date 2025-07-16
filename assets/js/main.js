@@ -30,19 +30,6 @@
 			}, 100);
 		});
 
-	// Forms.
-
-		// Hack: Activate non-input submits.
-			$('form').on('click', '.submit', function(event) {
-
-				// Stop propagation, default.
-					event.stopPropagation();
-					event.preventDefault();
-
-				// Submit form.
-					$(this).parents('form').submit();
-
-			});
 
 	// Sidebar.
 		if ($sidebar.length > 0) {

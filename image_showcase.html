@@ -1,0 +1,66 @@
+<body>
+    <!-- <nav>
+        <a href="#project1">Project 1</a> |
+        <a href="#project2">Project 2</a> |
+        <a href="#project3">Project 3</a>
+    </nav> -->
+    <section id="showcase"></section>
+
+    <script>
+        // Array of image sets for each project
+        const projects = [
+            [
+                { src: './images/bicocca/login.jpg', alt: 'Project 1 - Image B' },
+                { src: './images/bicocca/calender.jpg', alt: 'Project 1 - Image A' },
+                { src: './images/bicocca/career.jpg', alt: 'Project 1 - Image B' },
+                { src: './images/bicocca/exams.jpg', alt: 'Project 1 - Image B' },
+                { src: './images/bicocca/extra.jpg', alt: 'Project 1 - Image B' },
+                { src: './images/bicocca/menu.jpg', alt: 'Project 1 - Image B' }
+
+
+            ],
+            [
+                { src: './images/rkare/homepage.png', alt: 'Project 2 - Image A' },
+                { src: './images/rkare/calendar.png', alt: 'Project 2 - Image A' },
+                { src: './images/rkare/login.png', alt: 'Project 2 - Image A' },
+                { src: './images/rkare/otp.png', alt: 'Project 2 - Image A' },
+                { src: './images/rkare/profile.png', alt: 'Project 2 - Image A' },
+                { src: './images/rkare/survey_list.png', alt: 'Project 2 - Image A' },
+                { src: './images/rkare/survey_detail.png', alt: 'Project 2 - Image A' },
+                { src: './images/rkare/appointment_detail.png', alt: 'Project 2 - Image A' },
+
+
+
+
+            ],
+            [
+                { src: './images/teatro-massimo/homepage.webp', alt: 'Project 3 - Image A' },
+                { src: './images/teatro-massimo/calendar.webp', alt: 'Project 3 - Image A' },
+                { src: './images/teatro-massimo/season.webp', alt: 'Project 3 - Image A' },
+                { src: './images/teatro-massimo/promotions.webp', alt: 'Project 3 - Image A' },
+                { src: './images/teatro-massimo/extra.webp', alt: 'Project 3 - Image A' }
+
+            ]
+        ];
+
+        // Render images in the container based on the selected project
+        function renderImageShowcase(containerId, images) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = images.map(img =>
+                `<img src="${img.src}" alt="${img.alt}" style="max-width:200px; margin:5px;">`
+            ).join('');
+        }
+
+        // Show images depending on the hash value in the URL
+        function showProjectFromHash() {
+            const hash = window.location.hash || '#project1';
+            const index = ['#project1', '#project2', '#project3'].indexOf(hash);
+            if (index >= 0) {
+                renderImageShowcase('showcase', projects[index]);
+            }
+        }
+
+        window.addEventListener('hashchange', showProjectFromHash);
+        showProjectFromHash();
+    </script>
+</body>
