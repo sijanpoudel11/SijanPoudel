@@ -10,6 +10,39 @@
 	</head>
 	<body class="is-preload">
 
+	<!-- Top Navigation Bar for Mobile -->
+	<nav id="mobile-nav">
+	  <div class="mobile-nav-inner">
+		<!-- <a href="index.html" class="mobile-logo">Sijan Poudel</a> -->
+		<button id="mobile-menu-toggle" aria-label="Open menu">&#9776;</button>
+		<ul id="mobile-menu">
+		  <li><a href="#intro">Welcome</a></li>
+		  <li><a href="#one">My Works</a></li>
+		  <li><a href="#two">What I do</a></li>
+		  <li><a href="#three">Get in touch</a></li>
+		</ul>
+	  </div>
+	</nav>
+
+		<!-- Toast container -->
+			<div id="toast" style="
+			visibility: hidden;
+			min-width: 250px;
+			margin-left: -125px;
+			background-color: #333;
+			color: #fff;
+			text-align: center;
+			border-radius: 8px;
+			padding: 16px;
+			position: fixed;
+			z-index: 9999;
+			top: 100px;
+			right: 50px;
+			font-size: 16px;
+			opacity: 0;
+			transition: opacity 0.5s ease, visibility 0.5s ease;
+			"></div>
+
 		<!-- Sidebar -->
 			<section id="sidebar">
 				<div class="inner">
@@ -130,65 +163,65 @@
 							<p>Some of the skills i posess.</p>
 							<div class="features">
   <section>
-    <img src="https://developer.apple.com/assets/elements/icons/swift/swift-64x64_2x.png" alt="Swift" style="width: 64px; height: auto; margin-bottom: 1rem;" />
-    <img src="https://developer.apple.com/assets/elements/icons/swiftui/swiftui-128x128_2x.png" alt="Swift" style="width: 64px; height: auto; margin-bottom: 1rem;" />
+	<img src="https://developer.apple.com/assets/elements/icons/swift/swift-64x64_2x.png" alt="Swift" style="width: 64px; height: auto; margin-bottom: 1rem;" />
+	<img src="https://developer.apple.com/assets/elements/icons/swiftui/swiftui-128x128_2x.png" alt="Swift" style="width: 64px; height: auto; margin-bottom: 1rem;" />
 
 	
-    <h3>Swift and SwiftUI</h3>
-    <p>Stunning visuals and animations using SwiftUI and Swift</p>
+	<h3>Swift and SwiftUI</h3>
+	<p>Stunning visuals and animations using SwiftUI and Swift</p>
   </section>
   
   <section>
-    <img src="https://developer.apple.com/assets/elements/icons/swiftdata/swiftdata-96x96_2x.png" alt="Core Data" style="width: 64px; height: auto; margin-bottom: 1rem;" />
+	<img src="https://developer.apple.com/assets/elements/icons/swiftdata/swiftdata-96x96_2x.png" alt="Core Data" style="width: 64px; height: auto; margin-bottom: 1rem;" />
 	<img src="https://miro.medium.com/v2/resize:fit:600/format:webp/1*nm4j_6GfwWpqhuSPlbO-sg.png" alt="Core Data" style="width: 64px; height: auto; margin-bottom: 1rem;" />
-    <h3>CoreData and SwiftData</h3>
-    <p>Native on-device storage for fast and secure data management</p>
+	<h3>CoreData and SwiftData</h3>
+	<p>Native on-device storage for fast and secure data management</p>
   </section>
 
   <section>
-    <img src="https://opensource.google/static/images/projects/os-projects-dart.svg" alt="Dart" style="width: 64px; height: 64px; margin-bottom: 1rem;" />
-    <img src="https://img.icons8.com/color/512/flutter.png" alt="Flutter" style="width: 64px; height: 64px; margin-bottom: 1rem;" />
+	<img src="https://opensource.google/static/images/projects/os-projects-dart.svg" alt="Dart" style="width: 64px; height: 64px; margin-bottom: 1rem;" />
+	<img src="https://img.icons8.com/color/512/flutter.png" alt="Flutter" style="width: 64px; height: 64px; margin-bottom: 1rem;" />
 
-    <h3>Cross Platform Development</h3>
-    <p>Single codebase for iOS & Android using Dart and Flutter</p>
+	<h3>Cross Platform Development</h3>
+	<p>Single codebase for iOS & Android using Dart and Flutter</p>
   </section>
 
   <section>
-    
+	
 	<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAqFBMVEX///8YptEAX3wAV3YAW3gZqtYAn84Aos8AUHGasb2Bx+IXo80Kc5Tr8PIAW3dcutu+4/Bej6Lv+fwAVHSm1+pswN7r9/sAYn8Tl78OhqsFa4r3+/wVncadvMipxc8EaIbU4+gQjbMLfaAib4nD1957pbWGrbvi7fAyd5C2ztdnmKrO3+WHzuXX7/c1sNbC5vJPiJ2gvslDgpiw3e1DtNiPs8CY0udvnq6WtiuBAAAJSklEQVR4nO2dfV+qPBiAgw3pKaWjnCKjlPIN7U09Wd//mz1AIOweg81MBuz695zfgKvt3r0hu8/OpGPxsMXOajmo+j7kx12uMcK6jpEz86q+GblxHyahqYjA2Xpa9Q3JS2+u71XFvvxl1TclJ4v5GOmQQNfIrfrOpGMxA70q1TUZVX1zcrH40uletddlT1Tv2tObO2xVEba/VLpCaFWW3r2zyDGJbRXqz84GOwfEKms8vDeM227gDOhqeSKRzasSVY+XhhZg3D85oHeh7XPVN1who4mtQ1VapCrWBXoXsvte1fdcEUvfBl3n7jZVFem6HDpgMKL+our7roDpFlGqCFN7XeR/Q/pX23R5a5uKVbSqb13UYMTzNu1ILFZUr2Koyh+MyHloS9rVm4F0HWfDOlfvassayN0BVZZToiqeGck0tRVp12gMVQ3LVTF0rb2qn+ZXWW6BKv3pkktVpOu2C7PUBk+Mz2uwtyei6lvXHcgj8LyZkR5OgRZ+uhdSFel6vGvBxDiYwymwm5ODctjSHsdgYmzcfsQGxvVgZXMgQdqlg536Ri2wlxMyXw/Xyz8gTLuI9lBzVozPYGnDnS0U6LqHE6M+71X9nEeAiuuiUyBD120XRPrxQ9WP+lPcGblpYFkHTIEsXeTEWPedZ3c0OcoUyLClPTpAV41z+qlPboRaeTtWNOY3PLroibGmOb3XR+JTYODo7eP65eXl4urjjUMYPTHqu/olqb0ZJkagpQ/L47qpXf173T/rzfsnhy9qYqzd7o37QL4LxDxx3Xz7R+2Avr5o5bpgpD+vVZK69MGKmSOuB6py27rh0EUvgVZ1CV2LNQxWHHHdfGGGmteP8s5FRXo8P+UjH8yIDFbYGXKoMt6LmnzhivQW0bvsbQ061xfRrfjydfPjprjRfxyJBMzpsSN7jur2idQKd3nydfOj9NXWe3krWhi6iLFoyz0tuuvsEORNQt84XgPy9K0gpydfmqHN7z/y4WRdYe59mJIx+M0njy2YpCKJ+9Y8HYOYJwmNMP/wNX7FZStMUtPOhZH3qw/8A5Zpv7K6vPsw5gVn6zd87YWRPg1deCLp4sedpAOg4G08hBqEN+9/Pz8zy56Ev3xdKxyLaedCkuZbu33Hcvg3YsxP0Mr7tWZ2TLOjvX3CuP/G/QcwhunfTcp0y93fnyOwv2eQRgZX6dK5Y4AFEHfXCm0lfQt9ndABN5ukY1kCG3wgYr0ahI8O+a8ud7OBrafEFpZxc34d9yzMsbxJZb1mm3iFa2Zg64K/a2naWOLUtJcMwrHAA2lv2TDuGpSMzt/sNf4IyDJu466F+yc2wcE07liWUMciek5e3mlmJ8sBf8sBd7EsX77sYZPE93uB5zGzHSdXhfmSvciHQNv7GC9h0Povju93As+jdbI7M4zJLjtdCgWtZByeN0VWdpBd55ogfPItEGPusfSyuiIvBjuZbuPm55xE1iqQaWnaZcNkmZnYy5KVDVqtlpXtWYN8EeZ15iJKVoySpWTlomQJoGQJoGQJoGQJoGQJoGQJoGQJoGQJoGQJoGQJoGQJoGQJ8Huy3JuEgdBOaQtlaWYnRcRVK2UdjJKlZEUoWUpWLkqWAIfJyjQg8oOi1skyD6V9ssyPiwO5fuPU1RhZxM9nBHE58/imyCIWfOLwLRGbIqvD+aEAA8bPIhoqi/wpqThcX1s0Rlbh54XltErWD4ehkiWCkiWAkiWAkpXgPm92I6/wYkpWzHRiI4TswoMslKxvlvHJZAh77IspWRGD/Veo2GdfTMmKWKafWSP2ecBKVsQq/c7a3jEvpmRFZL6zRivmxZSsCGfvSsdb5sWUrIisLPaHgkpWhJIlIGuSkbVmXkzJivjKzIbs8yuUrIhpKkvlWWWy0jNa8IR9MSXrm1GSwhedx6Bkxfi4LMtSsvZ8Ry3seAUXU7JiFnGSVXQxJSsmTh5QUWFRJSuk97BNZkPkz55ZvpSss7PnFc6ccorRuc+oE6NkPa/PYdFfbOPck1lbL2uTX3TbzrPVdllTO9dVgEdfrOWyXJ/lKi+JaLmsjc1wFTwsve5puay1jTADRG8CtluW+9UvgDpqtCmyuA4bO8kPQ+7lP5nNuZRElvEor6xRLMviOVb5JLKSA5Yd+WR5ydTPMw5PIes2OWS2aGOsItzkvQzPCbinkBUfU6qj2XEe8KjMk4UdLj9b+fdlpWcrn8t4bHcvPeG89NTun8oqPdw1PeMcSXhacMCM/zx48lxbYV7LOpbxtF88SVqYoZdWQ7BKC1hwFflgUTIKs2Us5DwO/oysYVFS8qq0LFEBg+JDgw3tSd+7whP58oaYWWY1bBXXJzK160O/NywutGZky2li26vaCZt+ZqvTsoorX/3Kl6ygfB+SuQKWm7WlW85j0YMdn7BEEeFKwiIDGWCtML4CWMdiSKjCMhZkIJmDOpBHK4VchnFLVoRE4xrUz5z6ZDFWZ3gSVaA0a12KZ7o7ULuWp3LmD1VRI9Bn/7hLMnqwhPsxa23nAapvI6dWpd2nPvFm60gF7/OhSmaiL2kzUQYb5zShy7jsYsJVvQojx/RmBxT9FVYFgpWOJjLnoQV4sEYyV4VWIVeggDTS5/JVJOJlOfnN0EWVJrfpl2Z1wt3RoetIuoh6onq90gUWC5BG4OOELjpYjTf1HYEpz1v76KGLClZoVrd0gcVoQo7Fks2bclUwWKG1V/UzHo/eHJOd6yehi14G1jVdYAFDl8VdkhuqunyyiJZqtrbhY7olfzHKWewdqNKGDtmtcGOCFcloDHQJR3oY15sVrEjcuf6TSE/Hdb9hwYpkscKHJqkwCQ0yqwYGK5IpzLrGXKXf4buIoFs1NFiRLCfC2xHG5RCq6ntVP8dpgAvGsp1UQ3skp0Ad1X8ZyM9ihghduGhiNB7vYLCS/h3XcVn0QehivTODU2Awn+6asGIWg4r0eZtdcH893GCv9Z7VwYxgpHeArlAV2LNqbhJahvsAI322d9Gqzrctius0vbmO83UFqjAIVn7Rl8CtYLFCoHc5Yai/vSMl4iBfb7uqEK8PPssMEglyvRzuw9T4tc1xmW7zv2JNVc3aOQXmA173k6pq8oOYE7L083sX0pWqHJY5gxHhL6/q+5KUJRiMwQD0qr4nicn2LuS0dGXDz3Slh76CvGqnVJWzePCx05cxW/8fTizyss4QeF4AAAAASUVORK5CYII=" alt="Authentication" style="width: 64px; height: auto; margin-bottom: 1rem;" />
-    <img src="https://happycoding.io/tutorials/google-cloud/images/authentication-2.png" alt="Authentication" style="width: 64px; height: auto; margin-bottom: 1rem;" />
-    
+	<img src="https://happycoding.io/tutorials/google-cloud/images/authentication-2.png" alt="Authentication" style="width: 64px; height: auto; margin-bottom: 1rem;" />
+	
 	<h3>Authentication and Authorization</h3>
-    <p>OAuth & social login with Firebase, Apple, Facebook</p>
+	<p>OAuth & social login with Firebase, Apple, Facebook</p>
   </section>
 
   <section>
-    <img src="https://cdn-icons-png.flaticon.com/512/2875/2875379.png" alt="UI Design" style="width: 64px; height: 64px; margin-bottom: 1rem;" />
-    <h3>Material and Cupertino Design</h3>
-    <p>Platform-specific design for iOS and Android UIs</p>
+	<img src="https://cdn-icons-png.flaticon.com/512/2875/2875379.png" alt="UI Design" style="width: 64px; height: 64px; margin-bottom: 1rem;" />
+	<h3>Material and Cupertino Design</h3>
+	<p>Platform-specific design for iOS and Android UIs</p>
   </section>
 
   <section>
-    <img src="https://firebase.google.com/static/images/brand-guidelines/logo-logomark.png" alt="Firebase" style="width: 64px; height: 64px; margin-bottom: 1rem;" />
-    <img src="https://static.vecteezy.com/system/resources/previews/049/401/758/non_2x/google-analytics-icon-on-transparent-background-free-png.png" alt="Firebase" style="width: 64px; height: auto; margin-bottom: 1rem;" />
+	<img src="https://firebase.google.com/static/images/brand-guidelines/logo-logomark.png" alt="Firebase" style="width: 64px; height: 64px; margin-bottom: 1rem;" />
+	<img src="https://static.vecteezy.com/system/resources/previews/049/401/758/non_2x/google-analytics-icon-on-transparent-background-free-png.png" alt="Firebase" style="width: 64px; height: auto; margin-bottom: 1rem;" />
    
 	<h3>Firebase Integration</h3>
-    <p>Real-time database, authentication, cloud messaging, analytics</p>
+	<p>Real-time database, authentication, cloud messaging, analytics</p>
   </section>
 
   <section>
-    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828673.png" alt="Responsive" style="width: 64px; height: 64px; margin-bottom: 1rem;" />
-    <h3>Responsive Design</h3>
-    <p>Optimized layouts across phones, tablets and devices</p>
+	<img src="https://cdn-icons-png.flaticon.com/512/1828/1828673.png" alt="Responsive" style="width: 64px; height: 64px; margin-bottom: 1rem;" />
+	<h3>Responsive Design</h3>
+	<p>Optimized layouts across phones, tablets and devices</p>
   </section>
 
   <section>
-    <img src="https://static.vecteezy.com/system/resources/previews/016/716/478/non_2x/google-maps-icon-free-png.png" alt="Integrations" style="width: 64px; height: 64px; margin-bottom: 1rem;" />
-    <img src="https://images.applypixels.com/images/originals/05121267-04cb-4f2a-89d7-69cccfa15cd0.png" alt="Integrations" style="width: 64px; height: 64px; margin-bottom: 1rem;" />
-    <img src="https://static-00.iconduck.com/assets.00/chat-icon-2048x2048-i7er18st.png" alt="Integrations" style="width: 64px; height: 64px; margin-bottom: 1rem;" />
-    
+	<img src="https://static.vecteezy.com/system/resources/previews/016/716/478/non_2x/google-maps-icon-free-png.png" alt="Integrations" style="width: 64px; height: 64px; margin-bottom: 1rem;" />
+	<img src="https://images.applypixels.com/images/originals/05121267-04cb-4f2a-89d7-69cccfa15cd0.png" alt="Integrations" style="width: 64px; height: 64px; margin-bottom: 1rem;" />
+	<img src="https://static-00.iconduck.com/assets.00/chat-icon-2048x2048-i7er18st.png" alt="Integrations" style="width: 64px; height: 64px; margin-bottom: 1rem;" />
+	
 	<h3>Third Party Integrations</h3>
-    <p>Maps, payments, chats, analytics and real-time systems</p>
+	<p>Maps, payments, chats, analytics and real-time systems</p>
   </section>
 </div>
 
@@ -235,7 +268,7 @@
 										</li>
 										<li>
 											<h3>Email</h3>
-											<a href="#">sijanp11@gmail.com</a>
+											<a href="#">sijanp22@gmail.com</a>
 										</li>
 										<li>
 											<h3>Phone</h3>
@@ -263,7 +296,7 @@
 			<footer id="footer" class="wrapper style1-alt">
 				<div class="inner">
 					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="#">Sijan Poudel</a></li>
+						<li>&copy; All rights reserved.</li><li>Design: <a href="#">Sijan Poudel</a></li>
 					</ul>
 				</div>
 			</footer>
@@ -277,39 +310,175 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+<style>
+  /* Hide mobile nav by default, show on small screens */
+  #mobile-nav {
+	display: none;
+	width: 100%;
+	background: #312450;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10001;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .mobile-nav-inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.5em 1em;
+	height: 44px;
+  }
+  .mobile-logo {
+	color: #fff;
+	font-weight: bold;
+	font-size: 1.2em;
+	text-decoration: none;
+	flex: 1 1 auto;
+	text-align: left;
+	margin-right: 0.5em;
+	border: none;
+  }
+  #mobile-menu-toggle {
+
+	border: none !important;
+	border-radius: 0 !important;
+	color: #fff;
+	font-size: 1.5em;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	margin-left: auto;
+	text-align: right;
+	box-sizing: border-box;
+	transition: none;
+  }
+  #mobile-menu {
+	display: none;
+	flex-direction: column;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	background: #312450;
+	margin: 0;
+	padding: 10px;
+	list-style: none;
+  }
+  #mobile-menu li {
+	border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  #mobile-menu li a {
+	color: #fff;
+	display: block;
+	padding: 1em;
+	text-decoration: none;
+  }
+  #mobile-menu li a:hover {
+	background: #271c3a;
+  }
+
+  @media screen and (max-width: 736px) {
+	#mobile-nav {
+	  display: block;
+	}
+	#sidebar {
+	  display: none !important;
+	}
+	#wrapper, #footer {
+	  margin-left: 0 !important;
+	}
+	body {
+	  padding-top: 56px;
+	}
+  }
+</style>
+<script>
+  // Mobile menu toggle
+  document.addEventListener('DOMContentLoaded', function() {
+	var toggle = document.getElementById('mobile-menu-toggle');
+	var menu = document.getElementById('mobile-menu');
+	if (toggle && menu) {
+	  toggle.addEventListener('click', function() {
+		menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+	  });
+	  // Close menu on link click and scroll to section
+	  menu.querySelectorAll('a').forEach(function(link) {
+		link.addEventListener('click', function(e) {
+		  menu.style.display = 'none';
+		  // Optional: smooth scroll to section
+		  var targetId = this.getAttribute('href');
+		  if (targetId && targetId.startsWith('#')) {
+			var section = document.querySelector(targetId);
+			if (section) {
+			  section.scrollIntoView({ behavior: 'smooth' });
+			  e.preventDefault();
+			}
+		  }
+		});
+	  });
+	}
+  });
+</script>
+
 			<script>
   const FORMSPREE_ENDPOINT = "https://formspree.io/f/xrbkyanj"; // Replace with your Formspree endpoint
 
   $('form').on('click', '.submit', function (event) {
-    event.preventDefault();
-    const form = $(this).closest('form')[0];
+  event.preventDefault();
+  const form = $(this).closest('form')[0];
 
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
+  if (!form.checkValidity()) {
+	form.reportValidity();
+	return;
+  }
 
-    const formData = {
-      name: $('#name').val(),
-      email: $('#email').val(),
-      message: $('#message').val()
-    };
+  const formData = {
+	name: $('#name').val(),
+	email: $('#email').val(),
+	message: $('#message').val()
+  };
 
-    $.ajax({
-      url: FORMSPREE_ENDPOINT,
-      method: "POST",
-      data: formData,
-      dataType: "json",
-      success: function () {
-        $('#form-response').html("<p style='color: green;'>Thanks! Your message was sent.</p>");
-        form.reset();
-      },
-      error: function () {
-        $('#form-response').html("<p style='color: red;'>Oops! Something went wrong.</p>");
-      }
-    });
+  function showToast(message, type = 'success') {
+  const toast = $('#toast');
+  toast.text(message);
+
+  // Optional: change background color by type
+  toast.css('background-color', type === 'error' ? '#e74c3c' : '#27ae60');
+
+  toast.addClass('show-toast');
+
+  setTimeout(() => {
+	toast.removeClass('show-toast');
+  }, 3000); // Hide after 3 seconds
+}
+
+
+  $.ajax({
+	url: FORMSPREE_ENDPOINT, // Replace with your actual endpoint
+	method: "POST",
+	data: formData,
+	dataType: "json",
+	success: function () {
+	  showToast("Message sent successfully!");
+	  form.reset();
+	},
+	error: function () {
+	  showToast("Failed to send message. Try again.", "error");
+	}
   });
+});
 </script>
+<style>
+  .show-toast {
+	visibility: visible !important;
+	opacity: 1 !important;
+  }
+</style>
 
 	</body>
 </html>
