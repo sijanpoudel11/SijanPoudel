@@ -10,6 +10,8 @@ export default async function handler(req, res) {
   }
 
   try {
+    console.log("Request body:", req.body);
+
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -25,7 +27,6 @@ export default async function handler(req, res) {
     });
 
     if (!response.ok) {
-      console.log("Request body:", req.body);
       const text = await response.text();
       throw new Error(text);
     }
