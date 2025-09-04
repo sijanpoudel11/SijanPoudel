@@ -25,6 +25,7 @@ export default async function handler(req, res) {
     });
 
     if (!response.ok) {
+      console.log("Request body:", req.body);
       const text = await response.text();
       throw new Error(text);
     }
