@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 
   try {
     console.log("Request body:", req.body);
-    console.log(" base URL:", `${process.env.VERCEL_URL}`);
+    console.log(" base URL:", `${process.env.DOMAIN_URL}`);
 
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
