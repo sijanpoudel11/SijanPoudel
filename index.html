@@ -66,7 +66,10 @@
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<h1>Sijan Poudel</h1>
+														<!-- <div style="display: flex; align-items: center; gap: 0.5em;">
+															<h1 style="margin: 0;">Sijan Poudel</h1>
+															<span class="pill pill-warning">dev</span>
+														</div> -->
 							<p>Professional Mobile App Developer With more than 4 years of experience in <a >IOS Development</a> and <a >Flutter</a>, <br /> My expertise inculdes and are not limited to Swift, SwiftUI, Swift Data, Dart, Flutter, Firebase, RESTful APIs, Push Notifications and third-party libraries, App store and Play store deployment . <br>
 							I have developed multiple production grade applications related to healthcare, E-commerce, Travel and bookings, chat systems, University stuent portal and pilgrim application</p>
 							<ul class="actions">
@@ -697,56 +700,99 @@
 	}
   });
 </script>
+<script>
 
-			<script>
-  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xrbkyanj"; // Replace with your Formspree endpoint
 
-  $('form').on('click', '.submit', function (event) {
-  event.preventDefault();
-  const form = $(this).closest('form')[0];
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xrbkyanj"; // your Formspree endpoint
 
-  if (!form.checkValidity()) {
-	form.reportValidity();
-	return;
-  }
+//   $('form').on('click', '.submit', function (event) {
+//     event.preventDefault();
+//     const form = $(this).closest('form')[0];
+
+//     if (!form.checkValidity()) {
+//       form.reportValidity();
+//       return;
+//     }
+
+//     const formData = {
+//       name: $('#name').val(),
+//       email: $('#email').val(),
+//       message: $('#message').val()
+//     };
+
+//     function showToast(message, type = 'success') {
+//       const toast = $('#toast');
+//       toast.text(message);
+//       toast.css('background-color', type === 'error' ? '#e74c3c' : '#27ae60');
+//       toast.addClass('show-toast');
+//       setTimeout(() => toast.removeClass('show-toast'), 3000);
+//     }
+	
+//     $.ajax({
+//       url: FORMSPREE_ENDPOINT,
+//       method: "POST",
+//       data: formData,
+//       dataType: "json",
+// 	  headers: {
+//     "Accept": "application/json"
+//   },
+//       success: function () {
+//         showToast("Message sent successfully!");
+//         form.reset();
+
+      
+//       },
+//       error: function () {
+//         showToast("Failed to send message. Try again.", "error");
+//       }
+//     });
+//   });
+
+  $('#contact-form').on('submit', async function(e) {
+  e.preventDefault();
 
   const formData = {
-	name: $('#name').val(),
-	email: $('#email').val(),
-	message: $('#message').val()
+    name: $('#name').val(),
+    email: $('#email').val(),
+    message: $('#message').val()
   };
 
-  function showToast(message, type = 'success') {
-  const toast = $('#toast');
-  toast.text(message);
-
-  // Optional: change background color by type
-  toast.css('background-color', type === 'error' ? '#e74c3c' : '#27ae60');
-
-  toast.addClass('show-toast');
-
-  setTimeout(() => {
-	toast.removeClass('show-toast');
-  }, 3000); // Hide after 3 seconds
-}
 
 
-  $.ajax({
-	url: FORMSPREE_ENDPOINT, // Replace with your actual endpoint
-	method: "POST",
-	data: formData,
-	dataType: "json",
-	success: function () {
-	  showToast("Message sent successfully!");
-	  form.reset();
-	},
-	error: function () {
-	  showToast("Failed to send message. Try again.", "error");
-	}
-  });
+  try {
+    // 1️⃣ Send form data to Formspree
+    const formspreeRes = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: JSON.stringify(formData)
+    });
+
+    if (!formspreeRes.ok) {
+      throw new Error("Failed to send message to Formspree");
+    }
+
+    // 2️⃣ Send acknowledgment email via Resend
+    const resendRes = await fetch('/api/send-ack', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: formData.name, email: formData.email })
+    });
+
+    const resendData = await resendRes.json();
+    if (!resendData.success) {
+      console.error("Resend error:", resendData.error);
+    }
+
+    alert("Message sent successfully! Check your inbox for a confirmation email.");
+    this.reset();
+  } catch (err) {
+    alert("Failed to send message. Try again.");
+    console.error(err);
+  }
 });
-</script>
 
+
+</script>
 
 	</body>
 </html>
