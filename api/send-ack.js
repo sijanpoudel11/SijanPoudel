@@ -20,7 +20,7 @@ export default async function handler(req, res) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: `Sijan Poudel <contact@${process.env.VERCEL_URL}>`,
+        from: `Sijan Poudel <contact@${process.env.DOMAIN_URL}>`,
         to: [email],
         subject: "Thanks for reaching out!",
         text: `Hi ${name},\n\nThanks for contacting me! I’ll get back to you soon.\n\n- Sijan`,
