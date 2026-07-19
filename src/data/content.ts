@@ -1,4 +1,27 @@
-export const profile = {
+export interface ProfileSocial {
+  label: string;
+  url: string;
+}
+
+export interface Profile {
+  name: string;
+  title: string;
+  summary: string;
+  resumeUrl: string;
+  location: string;
+  email: string;
+  phone: string;
+  address: string;
+  socials: ProfileSocial[];
+  contactPrompt: string;
+}
+
+export interface NavigationItem {
+  label: string;
+  href: string;
+}
+
+export const profile: Profile = {
   name: "Sijan Poudel",
   title: "Professional Mobile App Developer",
   summary:
@@ -19,7 +42,7 @@ export const profile = {
     "We can get in touch through the form below or by reaching out to my email address.",
 };
 
-export const navigation = [
+export const navigation: NavigationItem[] = [
   { label: "Welcome", href: "#intro" },
   { label: "My Works", href: "#projects" },
   { label: "What I do", href: "#skills" },

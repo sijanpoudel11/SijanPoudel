@@ -16,17 +16,6 @@ import { localeOptions, translations } from "./data/localization";
 import { cn } from "./utils/cn";
 import { useContactForm } from "./hooks/useContactForm";
 
-const skillIcons = {
-  swift: Sparkles,
-  database: Sparkles,
-  mobile: Sparkles,
-  shield: Sparkles,
-  palette: Sparkles,
-  firebase: Sparkles,
-  responsive: Sparkles,
-  plug: Sparkles,
-};
-
 function App() {
   const [locale, setLocale] = useState("en");
   const [activeGallery, setActiveGallery] = useState(null);
@@ -181,15 +170,26 @@ function App() {
                   key={project.id}
                   className="overflow-hidden rounded-3xl border border-white/10 bg-slate-950/70 shadow-xl shadow-black/20"
                 >
-                  <div className="flex h-40 items-center justify-center border-b border-white/10 bg-gradient-to-br from-fuchsia-500/20 via-slate-900 to-slate-800">
-                    <div className="text-center">
-                      <p className="text-sm uppercase tracking-[0.3em] text-slate-400">
-                        {t.sections.galleryLabel}
-                      </p>
-                      <p className="mt-2 text-lg font-semibold text-white">
-                        {project.title}
-                      </p>
-                    </div>
+                  <div className="flex h-40 items-center justify-center border-b border-white/10 bg-gradient-to-br from-fuchsia-500/20 via-slate-900 to-slate-800 p-5">
+                    {project.image ? (
+                      <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-slate-950/70 p-3">
+                        <img
+                          src={project.image}
+                          alt={`${project.title} cover`}
+                          className="h-full w-full object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    ) : (
+                      <div className="text-center">
+                        <p className="text-sm uppercase tracking-[0.3em] text-slate-400">
+                          {t.sections.galleryLabel}
+                        </p>
+                        <p className="mt-2 text-lg font-semibold text-white">
+                          {project.title}
+                        </p>
+                      </div>
+                    )}
                   </div>
                   <div className="space-y-5 p-7">
                     <div>
@@ -259,7 +259,8 @@ function App() {
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {skills.map((skill, index) => {
-              const Icon = skillIcons[skill.icon] || Sparkles;
+              const icons = skill.icons || [];
+
               return (
                 <div
                   key={skill.title}
@@ -268,8 +269,28 @@ function App() {
                     index % 2 === 1 && "md:translate-y-8",
                   )}
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-fuchsia-500/15 text-fuchsia-300">
-                    <Icon size={20} />
+                  <div className="flex min-h-28 items-center justify-center rounded-2xl border border-white/10 bg-slate-900/70 p-3">
+                    {icons.length > 0 ? (
+                      <div className="flex flex-wrap items-center justify-center gap-3">
+                        {icons.map((icon, iconIndex) => (
+                          <div
+                            key={`${skill.title}-${iconIndex}`}
+                            className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/5 p-2"
+                          >
+                            <img
+                              src={icon}
+                              alt={`${skill.title} icon ${iconIndex + 1}`}
+                              className="h-full w-full object-contain"
+                              loading="lazy"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-fuchsia-500/15 text-fuchsia-300">
+                        <Sparkles size={20} />
+                      </div>
+                    )}
                   </div>
                   <h3 className="mt-5 text-xl font-semibold text-white">
                     {skill.title}

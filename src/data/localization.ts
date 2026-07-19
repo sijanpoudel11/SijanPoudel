@@ -1,4 +1,56 @@
-export const translations = {
+export interface NavTranslations {
+  welcome: string;
+  works: string;
+  skills: string;
+  experience: string;
+  contact: string;
+}
+
+export interface HeroTranslations {
+  badge: string;
+  ctaPrimary: string;
+  ctaSecondary: string;
+  focusTitle: string;
+  focusDesc: string;
+  industries: string;
+}
+
+export interface SectionTranslations {
+  projectsTitle: string;
+  projectsSubtitle: string;
+  skillsTitle: string;
+  skillsSubtitle: string;
+  experienceTitle: string;
+  contactTitle: string;
+  contactSubtitle: string;
+  galleryLabel: string;
+  galleryTitle: string;
+}
+
+export interface ButtonTranslations {
+  appStore: string;
+  playStore: string;
+  viewGallery: string;
+  sendMessage: string;
+}
+
+export interface FormTranslations {
+  name: string;
+  email: string;
+  message: string;
+}
+
+export interface TranslationSet {
+  nav: NavTranslations;
+  hero: HeroTranslations;
+  sections: SectionTranslations;
+  buttons: ButtonTranslations;
+  forms: FormTranslations;
+}
+
+export type LocaleCode = "en" | "np";
+
+export const translations: Record<LocaleCode, TranslationSet> = {
   en: {
     nav: {
       welcome: "Welcome",
@@ -28,16 +80,14 @@ export const translations = {
       contactTitle: "Get in touch",
       contactSubtitle:
         "We can get in touch through the form below or by reaching out to my email address.",
+      galleryLabel: "Project gallery",
+      galleryTitle: "Project gallery",
     },
     buttons: {
       appStore: "App Store",
       playStore: "Play Store",
       viewGallery: "View gallery",
       sendMessage: "Send message",
-    },
-    sections: {
-      galleryLabel: "Project gallery",
-      galleryTitle: "Project gallery",
     },
     forms: {
       name: "Name",
@@ -74,6 +124,8 @@ export const translations = {
       contactTitle: "सम्पर्क गर्नुहोस्",
       contactSubtitle:
         "तपाईंले तलको फारम वा मेरो इमेल मार्फत सम्पर्क गर्न सक्नुहुन्छ।",
+      galleryLabel: "प्रोजेक्ट ग्यालेरी",
+      galleryTitle: "प्रोजेक्ट ग्यालेरी",
     },
     buttons: {
       appStore: "एप स्टोर",
@@ -89,7 +141,7 @@ export const translations = {
   },
 };
 
-export const localeOptions = [
+export const localeOptions: Array<{ code: LocaleCode; label: string }> = [
   { code: "en", label: "English" },
   { code: "np", label: "नेपाली" },
 ];
