@@ -10,8 +10,8 @@
     sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.95);
-  background-color: #020617;
+  color: rgba(248, 250, 252, 0.96);
+  background-color: #07111d;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -26,7 +26,19 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: linear-gradient(135deg, #020617 0%, #111827 100%);
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(45, 212, 191, 0.16),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #07111d 0%, #0d1725 45%, #111827 100%);
+  color: #f8fafc;
+}
+
+::selection {
+  background: rgba(45, 212, 191, 0.3);
+  color: white;
 }
 
 * {

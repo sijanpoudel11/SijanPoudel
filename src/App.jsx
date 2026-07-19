@@ -1,13 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import {
-  ArrowRight,
-  Globe,
-  Mail,
-  MapPin,
-  Phone,
-  Sparkles,
-  X,
-} from "lucide-react";
+import { ArrowRight, Globe, Mail, MapPin, Phone, X } from "lucide-react";
 import { profile, navigation } from "./data/content";
 import { projects } from "./data/projects";
 import { experiences } from "./data/experiences";
@@ -36,8 +28,8 @@ function App() {
   }, [activeGallery]);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
-      <header className="sticky top-0 z-30 border-b border-white/10 bg-slate-950/80 backdrop-blur">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(45,212,191,0.12),_transparent_32%),linear-gradient(135deg,_#07111d_0%,_#0d1725_45%,_#111827_100%)] text-slate-100">
+      <header className="sticky top-0 z-30 border-b border-white/10 bg-[#07111d]/80 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
           <a
             href="#intro"
@@ -58,7 +50,7 @@ function App() {
               ))}
             </nav>
             <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2">
-              <Globe size={16} className="text-fuchsia-300" />
+              <Globe size={16} className="text-teal-300" />
               <select
                 value={locale}
                 onChange={(event) => setLocale(event.target.value)}
@@ -85,8 +77,7 @@ function App() {
           className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-28"
         >
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 rounded-full border border-fuchsia-400/30 bg-fuchsia-500/10 px-3 py-1 text-sm text-fuchsia-200">
-              <Sparkles size={16} />
+            <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-300">
               {t.hero.badge}
             </div>
             <div className="space-y-4">
@@ -105,7 +96,7 @@ function App() {
             <div className="flex flex-col gap-3 sm:flex-row">
               <a
                 href="#projects"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-fuchsia-500 px-5 py-3 font-medium text-white transition hover:bg-fuchsia-400"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 font-medium text-slate-900 transition hover:bg-slate-200"
               >
                 {t.hero.ctaPrimary} <ArrowRight size={18} />
               </a>
@@ -113,7 +104,7 @@ function App() {
                 href={profile.resumeUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-full border border-white/15 px-5 py-3 font-medium text-slate-200 transition hover:border-fuchsia-400 hover:text-white"
+                className="inline-flex items-center justify-center rounded-full border border-white/15 px-5 py-3 font-medium text-slate-200 transition hover:border-teal-400 hover:text-teal-100"
               >
                 {t.hero.ctaSecondary}
               </a>
@@ -122,8 +113,8 @@ function App() {
 
           <div className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/30">
             <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-fuchsia-500 to-violet-600 text-white">
-                <Sparkles size={22} />
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-slate-900/80 text-teal-300">
+                <span className="text-lg font-semibold">01</span>
               </div>
               <div>
                 <p className="text-sm uppercase tracking-[0.3em] text-slate-400">
@@ -149,11 +140,11 @@ function App() {
 
         <section
           id="projects"
-          className="border-t border-white/10 bg-slate-900/80"
+          className="border-t border-white/10 bg-[#0b1420]/80"
         >
           <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
             <div className="max-w-3xl">
-              <p className="text-sm uppercase tracking-[0.3em] text-fuchsia-300">
+              <p className="text-sm uppercase tracking-[0.3em] text-teal-300">
                 Selected work
               </p>
               <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
@@ -168,11 +159,11 @@ function App() {
               {projects.map((project) => (
                 <article
                   key={project.id}
-                  className="overflow-hidden rounded-3xl border border-white/10 bg-slate-950/70 shadow-xl shadow-black/20"
+                  className="overflow-hidden rounded-3xl border border-white/10 bg-[#0d1724]/80 shadow-[0_18px_50px_rgba(2,8,23,0.32)]"
                 >
-                  <div className="flex h-40 items-center justify-center border-b border-white/10 bg-gradient-to-br from-fuchsia-500/20 via-slate-900 to-slate-800 p-5">
+                  <div className="flex h-40 items-center justify-center border-b border-white/10 bg-gradient-to-br from-teal-500/15 via-slate-900 to-slate-800 p-5">
                     {project.image ? (
-                      <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-slate-950/70 p-3">
+                      <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-[#07121d]/80 p-3">
                         <img
                           src={project.image}
                           alt={`${project.title} cover`}
@@ -206,7 +197,7 @@ function App() {
                     <ul className="space-y-2 text-sm text-slate-300">
                       {project.features.map((feature) => (
                         <li key={feature} className="flex items-center gap-2">
-                          <span className="h-2 w-2 rounded-full bg-fuchsia-400" />
+                          <span className="h-2 w-2 rounded-full bg-teal-400" />
                           {feature}
                         </li>
                       ))}
@@ -215,7 +206,7 @@ function App() {
                       <button
                         type="button"
                         onClick={() => setActiveGallery(project)}
-                        className="rounded-full border border-fuchsia-400/30 bg-fuchsia-500/10 px-4 py-2 text-sm font-medium text-fuchsia-200 transition hover:bg-fuchsia-500/20"
+                        className="rounded-full border border-teal-400/30 bg-teal-500/10 px-4 py-2 text-sm font-medium text-teal-200 transition hover:bg-teal-500/20"
                       >
                         {t.buttons.viewGallery}
                       </button>
@@ -223,7 +214,7 @@ function App() {
                         href={project.appStoreUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="rounded-full border border-fuchsia-400/30 bg-fuchsia-500/10 px-4 py-2 text-sm font-medium text-fuchsia-200 transition hover:bg-fuchsia-500/20"
+                        className="rounded-full border border-teal-400/30 bg-teal-500/10 px-4 py-2 text-sm font-medium text-teal-200 transition hover:bg-teal-500/20"
                       >
                         {t.buttons.appStore}
                       </a>
@@ -232,7 +223,7 @@ function App() {
                           href={project.playStoreUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-fuchsia-400 hover:text-white"
+                          className="rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-teal-400 hover:text-teal-100"
                         >
                           {t.buttons.playStore}
                         </a>
@@ -247,7 +238,7 @@ function App() {
 
         <section id="skills" className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-sm uppercase tracking-[0.3em] text-fuchsia-300">
+            <p className="text-sm uppercase tracking-[0.3em] text-teal-300">
               Capabilities
             </p>
             <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
@@ -265,7 +256,7 @@ function App() {
                 <div
                   key={skill.title}
                   className={cn(
-                    "rounded-3xl border border-white/10 bg-white/5 p-6",
+                    "rounded-3xl border border-white/10 bg-[#0f1727]/70 p-6 shadow-[0_12px_35px_rgba(2,8,23,0.2)]",
                     index % 2 === 1 && "md:translate-y-8",
                   )}
                 >
@@ -287,8 +278,8 @@ function App() {
                         ))}
                       </div>
                     ) : (
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-fuchsia-500/15 text-fuchsia-300">
-                        <Sparkles size={20} />
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-slate-900/70 text-slate-400">
+                        <span className="text-sm font-medium">•</span>
                       </div>
                     )}
                   </div>
@@ -306,11 +297,11 @@ function App() {
 
         <section
           id="experience"
-          className="border-t border-white/10 bg-slate-900/80"
+          className="border-t border-white/10 bg-[#0b1420]/80"
         >
           <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
             <div className="max-w-3xl">
-              <p className="text-sm uppercase tracking-[0.3em] text-fuchsia-300">
+              <p className="text-sm uppercase tracking-[0.3em] text-teal-300">
                 Experience
               </p>
               <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
@@ -321,7 +312,7 @@ function App() {
               {experiences.map((experience) => (
                 <article
                   key={experience.company}
-                  className="rounded-3xl border border-white/10 bg-slate-950/70 p-8"
+                  className="rounded-3xl border border-white/10 bg-[#0d1724]/80 p-8 shadow-[0_12px_35px_rgba(2,8,23,0.2)]"
                 >
                   <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
                     <div>
@@ -340,7 +331,7 @@ function App() {
                   <ul className="mt-5 space-y-2 text-sm text-slate-300">
                     {experience.responsibilities.map((item) => (
                       <li key={item} className="flex gap-2">
-                        <span className="mt-2 h-2 w-2 rounded-full bg-fuchsia-400" />
+                        <span className="mt-2 h-2 w-2 rounded-full bg-teal-400" />
                         {item}
                       </li>
                     ))}
@@ -362,10 +353,10 @@ function App() {
         </section>
 
         <section id="contact" className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="grid gap-8 rounded-3xl border border-white/10 bg-gradient-to-br from-fuchsia-500/10 to-slate-900 p-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="grid gap-8 rounded-3xl border border-white/10 bg-gradient-to-br from-teal-500/10 via-slate-900 to-amber-400/10 p-8 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="space-y-6">
               <div>
-                <p className="text-sm uppercase tracking-[0.3em] text-fuchsia-300">
+                <p className="text-sm uppercase tracking-[0.3em] text-teal-300">
                   Contact
                 </p>
                 <h2 className="mt-3 text-3xl font-semibold text-white">
@@ -377,15 +368,15 @@ function App() {
               </div>
               <div className="space-y-4 text-sm text-slate-300">
                 <div className="flex items-center gap-3">
-                  <MapPin size={18} className="text-fuchsia-300" />
+                  <MapPin size={18} className="text-teal-300" />
                   {profile.address}
                 </div>
                 <div className="flex items-center gap-3">
-                  <Mail size={18} className="text-fuchsia-300" />
+                  <Mail size={18} className="text-teal-300" />
                   {profile.email}
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone size={18} className="text-fuchsia-300" />
+                  <Phone size={18} className="text-teal-300" />
                   {profile.phone}
                 </div>
               </div>
@@ -396,7 +387,7 @@ function App() {
                     href={social.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200 transition hover:border-fuchsia-400 hover:text-white"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200 transition hover:border-teal-400 hover:text-teal-100"
                   >
                     <Globe size={16} />
                     {social.label}
@@ -404,9 +395,9 @@ function App() {
                 ))}
               </div>
             </div>
-                        <form
+            <form
               onSubmit={handleSubmit}
-              className="space-y-4 rounded-3xl border border-white/10 bg-slate-950/70 p-6"
+              className="space-y-4 rounded-3xl border border-white/10 bg-[#08111d]/80 p-6"
             >
               <div className="grid gap-4 sm:grid-cols-2">
                 <label className="text-sm text-slate-300">
@@ -448,7 +439,7 @@ function App() {
               <button
                 type="submit"
                 disabled={status.submitting}
-                className="rounded-full bg-fuchsia-500 px-5 py-3 font-medium text-white transition hover:bg-fuchsia-400 disabled:cursor-not-allowed disabled:bg-fuchsia-800"
+                className="rounded-full bg-white px-5 py-3 font-medium text-slate-900 transition hover:bg-slate-200 disabled:cursor-not-allowed disabled:bg-slate-400"
               >
                 {status.submitting
                   ? t.buttons.sendingMessage
@@ -469,17 +460,17 @@ function App() {
 
       {activeGallery ? (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/90 p-4 backdrop-blur-sm sm:p-6"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#07111d]/90 p-4 backdrop-blur-sm sm:p-6"
           onClick={() => setActiveGallery(null)}
         >
           <div
-            className="relative flex max-h-[90vh] w-full max-w-6xl flex-col rounded-[28px] border border-white/10 bg-slate-950/95"
+            className="relative flex max-h-[90vh] w-full max-w-6xl flex-col rounded-[28px] border border-white/10 bg-[#07111d]/95"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex-shrink-0 border-b border-white/10 p-4 sm:p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm uppercase tracking-[0.3em] text-fuchsia-300">
+                  <p className="text-sm uppercase tracking-[0.3em] text-teal-300">
                     {t.sections.galleryTitle}
                   </p>
                   <h3 className="text-2xl font-semibold text-white">
@@ -489,7 +480,7 @@ function App() {
                 <button
                   type="button"
                   onClick={() => setActiveGallery(null)}
-                  className="rounded-full border border-white/10 bg-white/5 p-2 text-slate-200 transition hover:border-fuchsia-400 hover:text-white"
+                  className="rounded-full border border-white/10 bg-white/5 p-2 text-slate-200 transition hover:border-teal-400 hover:text-teal-100"
                 >
                   <X size={18} />
                 </button>
