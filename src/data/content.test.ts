@@ -6,7 +6,7 @@ describe("profile resume URL", () => {
     const baseUrl = "https://example.com/portfolio/";
 
     expect(new URL(profile.resumeUrl, baseUrl).toString()).toBe(
-      "https://example.com/portfolio/resume.pdf"
+      "https://example.com/portfolio/resume.pdf",
     );
   });
 });
